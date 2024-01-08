@@ -53,7 +53,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/app/borrow/list">
-                    <span>Your Reserved Book List</span>
+                    <span>Your Book List</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>

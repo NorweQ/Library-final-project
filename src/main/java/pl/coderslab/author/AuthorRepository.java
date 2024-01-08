@@ -11,7 +11,6 @@ import java.util.List;
 public interface AuthorRepository extends JpaRepository<Author, Long> {
     @Query("select a.fullName from Author a where a.fullName like %?1%")
     List<Author> findByFullName(String fullName);
-
     Author findAuthorByFullName(String fullName);
     Author findAuthorById(Long id);
     @Modifying

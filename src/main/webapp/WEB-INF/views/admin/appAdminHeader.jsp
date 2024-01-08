@@ -57,11 +57,14 @@
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/app/admin/add/user">
-                    <span>Add User</span>
-                    <i class="fas fa-angle-right"></i>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="usersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>Users</span>
                 </a>
+                <div class="dropdown-menu" aria-labelledby="usersDropdown">
+                    <a class="dropdown-item" href="/app/admin/add/user">Add User</a>
+                    <a class="dropdown-item" href="/app/admin/users/list">User List</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/app/admin/borrow/list">

@@ -94,7 +94,6 @@
                     </div>
                     <span id="descriptionError" class="error"></span>
                 </div>
-
             </div>
         </form>
 

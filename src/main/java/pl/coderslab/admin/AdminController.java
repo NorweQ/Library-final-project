@@ -12,6 +12,7 @@ import pl.coderslab.categries.Category;
 import pl.coderslab.categries.CategoryRepository;
 import pl.coderslab.publisher.Publisher;
 import pl.coderslab.publisher.PublisherRepository;
+import pl.coderslab.user.User;
 import pl.coderslab.user.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,11 @@ public class AdminController {
     public String adminIn(Model model) {
         model.addAttribute("admins", userRepository.findAllById(1L));
         return "admin/appAdminIn";
+    }
+    @RequestMapping("/add/user")
+    public String addUser(Model model) {
+        model.addAttribute("admins", userRepository.findAllById(1L));
+        return "admin/appAdminAddUser";
     }
     @RequestMapping("/add/book")
     public String addBooks(Model model) {
@@ -155,5 +161,20 @@ public class AdminController {
           book.setAuthor(authors);
         bookRepository.save(book);
         return "redirect:/app/admin/book/list";
+    }
+    @PostMapping("/register")
+    public String addUserByAdmin(@RequestParam("firstName") String firstName,
+                                 @RequestParam("lastName") String lastName,
+                                 @RequestParam("email") String email,
+                                 @RequestParam("password") String password,
+                                 @RequestParam("isAdmin") Integer isAdmin, Model model) {
+        User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setIsAdmin(isAdmin);
+        userRepository.save(user);
+        return "redirect:/app/admin/add/user";
     }
 }
