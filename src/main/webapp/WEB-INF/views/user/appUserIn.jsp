@@ -18,6 +18,7 @@
                     </c:forEach></h3>
             </div>
         <p>This is space for tell somethink about your library</p>
+        <img src="https://miro.medium.com/v2/resize:fit:1180/0*BVlH61W52QhuwAxo.jpg" alt="Opis zdjęcia" width="700" height="500">
         </div>
     </div>
 </div>

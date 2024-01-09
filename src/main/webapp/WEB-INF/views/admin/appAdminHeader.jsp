@@ -45,17 +45,14 @@
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/app/admin/book/list">
-                    <span>Book List</span>
-                    <i class="fas fa-angle-right"></i>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="booksDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>Books</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/app/admin/add/book">
-                    <span>Add Book</span>
-                    <i class="fas fa-angle-right"></i>
-                </a>
+                <div class="dropdown-menu" aria-labelledby="usersDropdown">
+                    <a class="dropdown-item" href="/app/admin/book/list">Book List</a>
+                    <a class="dropdown-item"  href="/app/admin/add/book">Add Book</a>
+                </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="usersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,7 +60,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="usersDropdown">
                     <a class="dropdown-item" href="/app/admin/add/user">Add User</a>
-                    <a class="dropdown-item" href="/app/admin/users/list">User List</a>
+                    <a class="dropdown-item" href="/app/admin/user/list">User List</a>
                 </div>
             </li>
             <li class="nav-item">

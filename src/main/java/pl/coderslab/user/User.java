@@ -24,6 +24,6 @@ public class User {
     @Email
     private String email;
     private String password;
-    private Integer isAdmin;
+    private String isAdmin;
 
 }

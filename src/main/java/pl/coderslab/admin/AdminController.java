@@ -49,6 +49,12 @@ public class AdminController {
         model.addAttribute("categories", categoryRepository.findAll());
         return "admin/appAdminAddBook";
     }
+    @RequestMapping("/user/list")
+    public String userList(Model model) {
+        model.addAttribute("admins", userRepository.findAllById(1L));
+        model.addAttribute("users", userRepository.findAll());
+        return "admin/appAdminUserList";
+    }
     @RequestMapping("/book/list")
     public String userIn(Model model){
         model.addAttribute("categories", categoryRepository.findAll());
@@ -63,6 +69,13 @@ public class AdminController {
             bookRepository.deleteById(bookId);
         }
         return "redirect:/app/admin/book/list";
+    }
+    @RequestMapping("/delete/user/{value}/{userId}")
+    public String adminDeleteUser(@PathVariable String value, @PathVariable Long userId){
+        if(value.equals("ok")){
+            userRepository.deleteById(userId);
+        }
+        return "redirect:/app/admin/user/list";
     }
     @RequestMapping("/book/edit/{bookId}")
     public String adminEditBook(@PathVariable Long bookId, Model model){
@@ -167,7 +180,7 @@ public class AdminController {
                                  @RequestParam("lastName") String lastName,
                                  @RequestParam("email") String email,
                                  @RequestParam("password") String password,
-                                 @RequestParam("isAdmin") Integer isAdmin, Model model) {
+                                 @RequestParam("isAdmin") String isAdmin) {
         User user = new User();
         user.setFirstName(firstName);
         user.setLastName(lastName);

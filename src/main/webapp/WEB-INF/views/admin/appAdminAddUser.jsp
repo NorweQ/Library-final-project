@@ -33,8 +33,8 @@
                     <div class="form-group">
                             <select id="isAdmin" name="isAdmin" class="form-control">
                                 <option value="">Select</option>
-                                <option value="1">The user is an admin</option>
-                                <option value="0">The user is not an admin</option>
+                                <option value="Admin">The user is an admin</option>
+                                <option value="User">The user is not an admin</option>
                             </select>
                         <span id="selectAdminError" class="error"></span>
                     </div>
