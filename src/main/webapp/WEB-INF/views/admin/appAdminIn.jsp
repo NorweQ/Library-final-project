@@ -16,3 +16,4 @@
 </div>
 </div>
 </section>
+<%@ include file="appAdminFooter.jsp" %>

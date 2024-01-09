@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: patryk
-  Date: 22.11.2023
-  Time: 09:59
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +16,7 @@
 <body>
 <header class="page-header">
     <nav class="navbar navbar-expand-lg justify-content-around">
-        <a href="/" class="navbar-brand main-logo">
+        <a href="/app/admin/admin" class="navbar-brand main-logo">
             Your <span>Library</span>
         </a>
         <div class="d-flex justify-content-around">
@@ -49,7 +43,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="booksDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>Books</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="usersDropdown">
+                <div class="dropdown-menu" aria-labelledby="booksDropdown">
                     <a class="dropdown-item" href="/app/admin/book/list">Book List</a>
                     <a class="dropdown-item"  href="/app/admin/add/book">Add Book</a>
                 </div>
