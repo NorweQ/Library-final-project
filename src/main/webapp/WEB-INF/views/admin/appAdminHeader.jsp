@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +59,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app/admin/borrow/list">
+                <a class="nav-link" href="/app/admin/borrow/book">
                     <span>Borrowed Books List</span>
                     <i class="fas fa-angle-right"></i>
                 </a>

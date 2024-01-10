@@ -2,7 +2,6 @@ package pl.coderslab.borrow;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.mapping.ToOne;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.book.Book;
 import pl.coderslab.user.User;

@@ -1,12 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: norweq
-  Date: 12.12.2023
-  Time: 14:47
-  To change this template use File | Settings | File Templates.
---%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ include file="appHeader.jsp" %>
 <div class="m-4 p-3 width-medium">
     <div class="dashboard-content border-dashed p-3 m-4 view-height">
@@ -62,7 +53,6 @@
                             }
                         }
 
-                        // Funkcja przekierowująca do servletu z określoną wartością
                         function usunPrzepis(value, borrowId) {
                             window.location.href = '/app/borrow/delete/' + value + '/' + borrowId;
                         }

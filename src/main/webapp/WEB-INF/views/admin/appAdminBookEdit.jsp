@@ -1,12 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: pc
-  Date: 25.11.2023
-  Time: 13:59
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="appAdminHeader.jsp" %>
 
 <div class="m-4 p-3 width-medium">
@@ -23,7 +14,6 @@
             </div>
 
             <div class="schedules-content">
-
                 <div class="form-group row">
                     <label for="title" class="col-sm-2 label-size col-form-label">
                         Title

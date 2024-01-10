@@ -8,6 +8,7 @@ import pl.coderslab.author.Author;
 import pl.coderslab.author.AuthorRepository;
 import pl.coderslab.book.Book;
 import pl.coderslab.book.BookRepository;
+import pl.coderslab.borrow.BorrowRepository;
 import pl.coderslab.categries.Category;
 import pl.coderslab.categries.CategoryRepository;
 import pl.coderslab.publisher.Publisher;
@@ -25,12 +26,14 @@ public class AdminController {
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;
     private final AuthorRepository authorRepository;
-    public AdminController(UserRepository userRepository, CategoryRepository categoryRepository, BookRepository bookRepository, PublisherRepository publisherRepository, AuthorRepository authorRepository) {
+    private final BorrowRepository borrowRepository;
+    public AdminController(UserRepository userRepository, CategoryRepository categoryRepository, BookRepository bookRepository, PublisherRepository publisherRepository, AuthorRepository authorRepository, BorrowRepository borrowRepository) {
         this.userRepository = userRepository;
         this.categoryRepository = categoryRepository;
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
         this.authorRepository = authorRepository;
+        this.borrowRepository = borrowRepository;
     }
 
     @RequestMapping("/admin")
@@ -48,6 +51,11 @@ public class AdminController {
         model.addAttribute("admins", userRepository.findAllById(1L));
         model.addAttribute("categories", categoryRepository.findAll());
         return "admin/appAdminAddBook";
+    }
+    @RequestMapping("/borrow/book")
+    public String borrowBook(Model model) {
+        model.addAttribute("admins", userRepository.findAllById(1L));
+        return "admin/appAdminBorrowedBooks";
     }
     @RequestMapping("/user/list")
     public String userList(Model model) {
@@ -69,6 +77,13 @@ public class AdminController {
             bookRepository.deleteById(bookId);
         }
         return "redirect:/app/admin/book/list";
+    }
+    @RequestMapping("/borrow/user")
+    public String findUser(@RequestParam String email, Model model){
+        model.addAttribute("admins", userRepository.findAllById(1L));
+        User user = userRepository.findUserByEmail(email);
+        model.addAttribute("borrowedBooks", borrowRepository.findAllByUserId(user.getId()));
+        return "admin/appAdminBorrowedBooks";
     }
     @RequestMapping("/delete/user/{value}/{userId}")
     public String adminDeleteUser(@PathVariable String value, @PathVariable Long userId){
